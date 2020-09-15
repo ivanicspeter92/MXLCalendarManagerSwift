@@ -111,6 +111,7 @@ public class MXLCalendarEvent {
          attendees: [MXLCalendarAttendee]) {
         self.calendar = Calendar(identifier: .gregorian)
         self.dateFormatter = DateFormatter()
+        self.dateFormatter?.locale = Locale(identifier: "en_US_POSIX")
         self.dateFormatter?.timeZone = TimeZone(identifier: timeZoneIdentifier ?? TimeZone.current.identifier)
         self.dateFormatter?.dateFormat = "yyyyMMdd HHmmss"
         self.eventStartDate = dateFromString(dateString: startString)
